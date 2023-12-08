@@ -4,14 +4,14 @@ import { useFormik } from 'formik'
 import {useContext } from "react"
 import { CardContext } from "../context/CardContext"
 import { ValidityContext } from '../context/ValidityContext'
-import { onChangeHandler, handleInput,cardDetails} from "../types"
+import { onChangeHandler, handleInput} from "../types"
 import Button from "./Button"
 import CardInput from "./CardInput"
 import { validationSchema } from './Validation'
 
 
 const Form = () => {
-  const {validated,setValidated} = useContext(ValidityContext);
+  const {setValidated} = useContext(ValidityContext);
   // formik
   const formik = useFormik({
     initialValues: {
@@ -43,11 +43,11 @@ const Form = () => {
   const handleCardNumberChange:onChangeHandler = (inputIdentifier, event) => {
     const cNumber = event.target.value
 
-    setCard((prevstate)=> {
+    setCard((prevState)=> {
         
         const initial = '0000000000000000'
         const cardNumber = cNumber + initial.substring(cNumber.length)
-        return {...card,[inputIdentifier]: cardNumber}
+        return {...prevState,[inputIdentifier]: cardNumber}
     })
 
     formik.handleChange(event)
