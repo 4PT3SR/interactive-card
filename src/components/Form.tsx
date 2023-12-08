@@ -73,7 +73,7 @@ const Form = () => {
           
           <input type="number" name="year" id="year" className=" input" placeholder="YY" maxLength={2} value={formik.values.year} onChange={(event)=>handleChange('year',event)} onInput={handleInput}/>
           
-          <input type="number" name="cvv" id="cvv" className=" input col-span-2" placeholder="e.g. 123" maxLength={3} onInput={handleInput} value={formik.values.cvv} onChange={(event)=>handleChange('cvv',event)} />
+          <input type="string" name="cvv" id="cvv" className=" input col-span-2" placeholder="e.g. 123" maxLength={3} onInput={handleInput} value={formik.values.cvv} onChange={(event)=>handleChange('cvv',event)} />
           <small className="col-span-2">{formik.errors.month || formik.errors.year}</small>
           <small className="col-span-2">{formik.errors.cvv}</small>
           </div>
