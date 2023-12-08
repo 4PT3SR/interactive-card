@@ -47,7 +47,7 @@ const Form = () => {
         
         const initial = '0000000000000000'
         const cardNumber = cNumber + initial.substring(cNumber.length)
-        return {...prevState,[inputIdentifier]: cardNumber}
+        return {...prevState,[inputIdentifier]: cardNumber.toUpperCase()}
     })
 
     formik.handleChange(event)
@@ -62,7 +62,7 @@ const Form = () => {
           <CardInput labelName="CARDHOLDER NAME" name='name' type="text" placeholder="e.g Jane Appleseed" handleChange={handleChange} value={formik.values.name} maxLength={20} handleInput={handleInput}></CardInput>
           <small>{formik.errors.name}</small>
 
-          <CardInput labelName="CARD NUMBER" type="number" name='cardNumber' placeholder="e.g 1234 4567 9123 000" handleChange={handleCardNumberChange} value={formik.values.cardNumber} maxLength={16} handleInput={handleInput}></CardInput>
+          <CardInput labelName="CARD NUMBER" type="text" name='cardNumber' placeholder="e.g 1234 4567 9123 000" handleChange={handleCardNumberChange} value={formik.values.cardNumber} maxLength={16} handleInput={handleInput}></CardInput>
           <small>{formik.errors.cardNumber}</small>
 
 
