@@ -41,7 +41,7 @@ const Form = () => {
 
   // to manipulate card number
   const handleCardNumberChange:onChangeHandler = (inputIdentifier, event) => {
-    const cNumber = event.target.value
+    const cNumber = event.target.value.replace(/\s+/g, "")
 
     setCard((prevState)=> {
         
