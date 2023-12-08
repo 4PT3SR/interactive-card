@@ -1,0 +1,39 @@
+/* @import url('https://fonts.google.com/specimen/Space+Grotesk'); */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
+}
+
+.card {
+    @apply w-card h-card absolute bg-cover bg-center rounded-md;
+}
+
+.input-label {
+    @apply pt-4 pb-2 font-medium tracking-widest text-sm md:text-lg;
+}
+
+.input {
+    @apply px-3 py-3 rounded border-2;
+}
+
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
+         -webkit-appearance: none;
+      }
+input {
+    @apply outline-none;
+}
+
+small {
+    @apply pl-2 text-red-500;
+}   
